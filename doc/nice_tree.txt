@@ -1,0 +1,33 @@
+================================================================================
+Syntax
+
+OptNode = '_' | Node
+Node = '(' <Number> OptNode OptNode ')'
+
+Examples:
+    ( 1 _ _ )
+    ( 1 ( 2 _ _ ) ( 3 _ ( 4 _ _ ) ) )
+
+Extended syntax:
+
+- Tailing empty children can be skipped.
+    (1 (2 _ _) _)  -  is equivalent to:
+    (1 (2))
+- Leaf not doesn't need parentheses.
+    (1 _ _)  -  is equivalent to:
+    1
+
+
+================================================================================
+Printing design
+
+1
+├── 2
+│   ├── -21
+│   └── 22
+└── 3
+    ├── _
+    └── 32
+
+================================================================================
+TODO
